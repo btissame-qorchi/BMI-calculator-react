@@ -21,3 +21,7 @@ Clone this repository to your local machine and run the app using:
 
 - npm install
 - npm run dev
+
+## Demo:
+
+https://btissame-qorchi.github.io/BMI-calculator-react/
