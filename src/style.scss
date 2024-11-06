@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// Declare color variables
+$underweight: #7a9bb8;
+$normal: #a1b780;
+$overweight: #fcdf03;
+$obese: #9e8a67;
+$morbid: #d49c8d;
+
+body {
+  font-family: "Poppins", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  form {
+    max-width: 800px;
+    padding: 0 25px;
+    h1 {
+      font-weight: 500;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    input {
+      border: 1px solid #000;
+      height: 40px;
+      width: 40%;
+      padding: 20px;
+      margin: 0 auto 20px auto;
+      display: block;
+      &::placeholder {
+        opacity: 0.6;
+        color: #000;
+      }
+    }
+    button {
+      border: 0;
+      text-transform: uppercase;
+      background-color: #000;
+      color: #fff;
+      display: block;
+      margin: auto;
+      padding: 10px;
+    }
+  }
+  .resulat-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+    .body {
+      width: 20%;
+      &.active {
+        img {
+          opacity: 1;
+        }
+        .description {
+          opacity: 1;
+        }
+      }
+      img {
+        opacity: 0.3;
+        transition: opacity 0.3s ease;
+        width: 90%;
+        display: block;
+        margin: auto;
+      }
+      .description {
+        height: 80px;
+        width: 120px;
+        opacity: 0.3;
+        p {
+          text-align: center;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 3px;
+        }
+        span {
+          font-size: 14px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: calc(100% - 27px);
+        }
+      }
+      &.underweight {
+        .description {
+          border: 1px solid $underweight;
+        }
+
+        p {
+          background-color: $underweight;
+        }
+      }
+      &.normal {
+        .description {
+          border: 1px solid $normal;
+        }
+        p {
+          background-color: $normal;
+        }
+      }
+      &.overweight {
+        .description {
+          border: 1px solid $overweight;
+        }
+        p {
+          background-color: $overweight;
+        }
+      }
+      &.obese {
+        .description {
+          border: 1px solid $obese;
+        }
+        p {
+          background-color: $obese;
+        }
+      }
+      &.morbid-obesity {
+        .description {
+          border: 1px solid $morbid;
+        }
+        p {
+          background-color: $morbid;
+        }
+      }
+    }
+  }
+  .result-value {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    font-weight: 500;
+    &.normal {
+      background-color: $normal;
+    }
+    &.underweight {
+      background-color: $underweight;
+    }
+    &.overweight {
+      background-color: $overweight;
+    }
+    &.obese {
+      background-color: $obese;
+    }
+    &.morbid-obesity {
+      background-color: $morbid;
+    }
+  }
+}
+
+//responsive
+@media (max-width: 900px) {
+  body {
+    .resulat-desc {
+      gap: 10px;
+      .body {
+        width: 18%;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    .resulat-desc {
+      .body {
+        .description {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  body {
+    form {
+      input {
+        width: 100%;
+      }
+    }
+    .resulat-desc {
+      .body {
+        .description {
+          width: 100%;
+          p {
+            font-size: 12px;
+          }
+          span {
+            font-size: 10px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .result-value {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  body {
+    form {
+      padding: 0 15px;
+    }
+    .resulat-desc {
+      gap: 5px;
+      .body {
+        .description {
+          p {
+            font-size: 10px;
+          }
+          span {
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+}
